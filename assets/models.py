@@ -274,10 +274,10 @@ class Adapter(models.Model):
     """外设组件，如HBA卡、网卡"""
 
     server = models.ForeignKey('Asset', on_delete=models.CASCADE)  # 注意要用外键
-    name = models.CharField('外设名称', max_length=64, blank=True, null=True, default='eth0')
+    name = models.CharField('外设名称', max_length=128, blank=True, null=True, default='eth0')
     model = models.CharField('外设型号', max_length=128, blank=True, null=True, default=None)
     mac = models.CharField('MAC地址', max_length=64, default=None)  # 虚拟机有可能会出现同样的mac地址
-    ip_addr = models.GenericIPAddressField('IP地址', default=None)
+    ip_addr = models.GenericIPAddressField('IP地址', default=None, primary_key=True)
     net_mask = models.CharField('掩码', max_length=64, blank=True, null=True, default='255.255.255.0')
     bonding = models.CharField('绑定地址', max_length=64, blank=True, null=True, default=None)
 
