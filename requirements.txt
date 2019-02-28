@@ -1,0 +1,4 @@
+Django      >= 2.1.7
+requests    >= 2.21.0
+logbook     >= 1.4.3
+pymysql     >= 0.9.3

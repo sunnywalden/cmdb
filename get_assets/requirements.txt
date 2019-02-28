@@ -1,0 +1,3 @@
+requests    >= 2.21.0
+psutil      >= 5.5.1
+logbook     >= 1.4.3
